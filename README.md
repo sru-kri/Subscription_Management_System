@@ -1,4 +1,5 @@
 # SubSight
+
 ### Subscription Management & Billing Automation Platform
 
 **SubSight** is a unified subscription management and billing platform developed for Brightloop Software. It streamlines subscription operations, automates recurring invoicing, centralises payment records, and provides real-time visibility into financial activity.
@@ -15,7 +16,7 @@ SubSight addresses these operational challenges through a centralised system tha
 
 ## Core Modules
 
-| Module | Capabilities |
+| **Module** | **Capabilities** |
 |---|---|
 | **Dashboard** | Revenue metrics, active subscriptions, outstanding balances, and billing overview |
 | **Customer Management** | Centralised customer records and role-based access |
@@ -30,6 +31,7 @@ SubSight addresses these operational challenges through a centralised system tha
 ## Platform Capabilities
 
 ### Subscription Lifecycle Management
+
 Manage subscriptions through structured stages:
 
 `Draft → Quotation → Confirmed → Active → Closed`
@@ -37,6 +39,7 @@ Manage subscriptions through structured stages:
 Configure billing frequencies, quantities, subscription pricing, availability dates, and lifecycle operations.
 
 ### Automated Recurring Billing
+
 - Generate invoices from active subscriptions.
 - Run scheduled daily billing.
 - Trigger invoice generation manually.
@@ -44,18 +47,21 @@ Configure billing frequencies, quantities, subscription pricing, availability da
 - Maintain consistent billing records across recurring cycles.
 
 ### Flexible Pricing & Financial Rules
+
 - Configure fixed and percentage-based discounts.
 - Define discount eligibility, validity periods, usage limits, and scope.
 - Apply configurable tax rules.
 - Preserve tax rates and calculated amounts on individual invoices.
 
 ### Payment & Receivables Management
+
 - Record payments against invoices.
 - Support full and partial payments.
 - Track paid, outstanding, and overdue balances.
 - Maintain payment methods, transaction dates, amounts, and notes.
 
 ### Financial Intelligence
+
 - Monitor active subscriptions and monthly recurring revenue.
 - Track revenue through successful recorded payments.
 - Review outstanding balances and overdue invoices.
@@ -63,7 +69,7 @@ Configure billing frequencies, quantities, subscription pricing, availability da
 
 ## Technology Stack
 
-| Component | Technology |
+| **Component** | **Technology** |
 |---|---|
 | Frontend | React, Vite |
 | UI & Styling | Tailwind CSS |
@@ -82,13 +88,13 @@ SubSight uses a client-server architecture with a React-based frontend and an Ex
                  |
        React + Vite Frontend
                  |
-           REST API
+            REST API
                  |
-        Node.js + Express
+         Node.js + Express
                  |
-          Business Logic
+           Business Logic
                  |
-             MongoDB
+              MongoDB
 ```
 
 The backend manages authentication, access control, subscription operations, invoice generation, payment records, and financial calculations.
@@ -100,6 +106,7 @@ A shared billing service handles both scheduled invoice generation and manual bi
 SubSight applies consistent financial rules across its billing workflows.
 
 **Invoice calculation**
+
 - Eligible discounts are applied before tax.
 - Applicable tax rates and calculated amounts are stored with each invoice.
 - Payments are recorded against invoice totals.
@@ -112,7 +119,7 @@ Each recurring invoice is associated with a unique subscription-and-billing-peri
 
 Active subscription values are normalised to a monthly equivalent:
 
-| Billing Frequency | Monthly Normalisation |
+| **Billing Frequency** | **Monthly Normalisation** |
 |---|---|
 | Daily | Value × 365 ÷ 12 |
 | Weekly | Value × 52 ÷ 12 |
@@ -122,6 +129,7 @@ Active subscription values are normalised to a monthly equivalent:
 MRR calculations use pre-tax recurring prices, account for seat quantities and subscription-level discounts, and exclude paused subscriptions.
 
 **Financial calculations**
+
 - Invoice revenue is calculated from successful recorded payments.
 - Outstanding balance is calculated as invoice total minus successful payments.
 
@@ -137,14 +145,14 @@ All billing amounts are represented in Indian Rupees (INR).
 - MongoDB (local or hosted)
 - npm
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone <your-repository-url>
 cd SubSight
 ```
 
-### 2. Configure environment variables
+### 2. Configure Environment Variables
 
 Navigate to the backend directory:
 
@@ -160,14 +168,14 @@ cp .env.example .env
 
 Configure the following variables in `backend/.env`:
 
-| Variable | Purpose |
+| **Variable** | **Purpose** |
 |---|---|
 | `MONGODB_URI` | MongoDB connection string |
 | `JWT_SECRET` | Private authentication secret (minimum 32 characters) |
 | `ADMIN_PASSWORD` | Initial administrator password |
 | `SMTP_*` | SMTP configuration for password reset emails |
 
-### 3. Install dependencies and initialise the database
+### 3. Install Dependencies and Initialise the Database
 
 ```bash
 npm install
@@ -176,7 +184,7 @@ npm run seed
 
 The seed command creates the configured initial administrator account.
 
-### 4. Start the backend
+### 4. Start the Backend
 
 ```bash
 npm run dev
@@ -184,7 +192,7 @@ npm run dev
 
 The API runs on port `4000` by default.
 
-### 5. Start the frontend
+### 5. Start the Frontend
 
 Open a separate terminal:
 
